@@ -1,0 +1,12 @@
+tree_service:
+    path:     /f/{neud_id}
+    defaults: { _controller: "DreamlifeBundle:Tree:getTreeById" }
+    methods:  GET
+tree_view:
+    path:     /arbo/{neud_id}
+    defaults: { _controller: "DreamlifeBundle:Tree:Treebyid" }
+    methods:  GET
+earn_view:
+    path:     /earn/{neud_id}
+    defaults: { _controller: "DreamlifeBundle:Tree:getearn" }
+    methods:  GET

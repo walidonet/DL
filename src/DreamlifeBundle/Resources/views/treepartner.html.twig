@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Organization Chart Plugin</title>
+    <link rel="stylesheet" href="{{ asset('template/css/font-awesome.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('template/css/jquery.orgchart.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('template/css/style.css') }}">
+</head>
+<body>
+<div id="chart-container"></div>
+
+<script type="text/javascript" src="{{ asset('template/js/jquery.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('template/js/jquery.orgchart.min.js') }}"></script>
+
+<script>
+    console.log('salem kira');
+    (function() {
+//{ app.request.get('neud_id') }}
+
+        var flickerAPI = "http://127.0.0.1/dl/web/app_dev.php/tree/f/"+{{  app.request.get('neud_id') }};
+        console.log(flickerAPI)
+        $.getJSON( flickerAPI, {
+            tags: "mount rainier",
+            tagmode: "any",
+            format: "json"
+        })
+            .done(function( data ) {
+
+                $.each( data, function( i, item ) {
+
+
+
+
+
+                    /******/
+                });
+                $('#chart-container').orgchart({
+                    'data' : data,
+                    'nodeContent': 'title',
+                    'createNode': function($node, data) {
+                        var secondMenuIcon = $('<>', {
+                            'class': 'fa fa-info-circle second-menu-icon',
+                            click: function() {
+                                $(this).siblings('.second-menu').toggle();
+                            }
+                        });
+                        var secondMenu = '<div class="second-menu"><a href="/dreamlife/tree/arbo/' + data.name + '">voir plus</a> <div>';
+//var secondMenu = '<div class="second-menu"><img class="avatar" src="../img/avatar/' + data.id + '.jpg"></div>';
+                        $node.append(secondMenuIcon).append(secondMenu);
+                    }
+                });
+            });
+
+    })();
+</script>
+
+</body>
+</html>
