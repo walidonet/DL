@@ -1,0 +1,16 @@
+{% for ea in name %}
+<tr>
+    <td>{{ ea.lastname }}</td>
+    <td>{{ ea.firstname }}</td>
+    <td>
+        <ul>
+            <li>
+                <a href="{{ path('tree_view', { 'neud_id': ea.uid }) }}">show tree</a>
+            </li>
+            <li>
+                <a href="{{ path('earn_view', { 'neud_id': ea.uid }) }}">show earning</a>
+            </li>
+        </ul>
+    </td>
+</tr>
+{% endfor %}

@@ -1,0 +1,5 @@
+earned_service:
+    path:     /earnd
+    defaults: { _controller: "DreamlifeBundle:Earn:EarnedUser" }
+    methods:  GET
+

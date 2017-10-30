@@ -10,7 +10,7 @@ namespace DreamlifeBundle\Repository;
  */
 class EarninggRepository extends \Doctrine\ORM\EntityRepository
 {
-    public function FindCount($i)
+    public function FindUserEarning($i)
     {
         $qb = $this->getEntityManager()->createQueryBuilder();
         $qb->select('count(sale.uid)');
@@ -20,5 +20,5 @@ class EarninggRepository extends \Doctrine\ORM\EntityRepository
         $count = $qb->getQuery()->getSingleScalarResult();
         return $count;
     }
-
+   
 }
