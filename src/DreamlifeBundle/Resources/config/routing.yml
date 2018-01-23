@@ -1,6 +1,9 @@
 dreamlife_homepage:
     path:     /
     defaults: { _controller: DreamlifeBundle:Default:index }
+test:
+    path:     /aa
+    defaults: { _controller: DreamlifeBundle:Default:getTreeById }
 my_app_tree:
     resource: "@DreamlifeBundle/Resources/config/routing/tree.yml"
     prefix:   /tree

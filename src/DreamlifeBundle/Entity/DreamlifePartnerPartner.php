@@ -376,6 +376,8 @@ class DreamlifePartnerPartner
         $this->isPlaced = $isPlaced;
     }
 
+
+
     /**
      * @return int
      */
